@@ -1,0 +1,184 @@
+/* Basic Reset & Body */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: sans-serif;
+    /* Use Telegram theme colors */
+    background-color: var(--tg-theme-bg-color, #ffffff);
+    color: var(--tg-theme-text-color, #000000);
+    padding: 15px;
+    overscroll-behavior: none; /* Prevent pull-to-refresh */
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Align top */
+    min-height: 100vh;
+    line-height: 1.6;
+}
+
+.container {
+    width: 100%;
+    max-width: 600px; /* Max width for larger screens */
+    background-color: var(--tg-theme-secondary-bg-color, #f0f0f0);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* Header */
+header {
+    margin-bottom: 25px;
+    border-bottom: 1px solid var(--tg-theme-hint-color, #ccc);
+    padding-bottom: 15px;
+}
+
+header h1 {
+    color: var(--tg-theme-text-color, #333);
+    margin-bottom: 5px;
+}
+
+.doge-icon {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 10px;
+}
+
+#user-greeting {
+    font-size: 0.9em;
+    color: var(--tg-theme-hint-color, #666);
+}
+
+/* Stats */
+.stats {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 25px;
+    flex-wrap: wrap; /* Allow wrapping on small screens */
+    gap: 15px;
+}
+
+.stat-item {
+    background-color: var(--tg-theme-bg-color, #fff);
+    padding: 15px;
+    border-radius: 8px;
+    min-width: 120px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.stat-item h2 {
+    font-size: 0.8em;
+    color: var(--tg-theme-hint-color, #888);
+    margin-bottom: 5px;
+    text-transform: uppercase;
+}
+
+.stat-item p {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: var(--tg-theme-text-color, #333);
+}
+
+.doge-ticker {
+    color: #c2a633; /* Doge color */
+    font-weight: bold;
+}
+
+/* Mining Status */
+.mining-status {
+    margin-bottom: 25px;
+}
+
+#status-text {
+    font-style: italic;
+    color: var(--tg-theme-hint-color, #666);
+    margin-bottom: 10px;
+}
+
+#mining-animation {
+    width: 50px;
+    height: 10px;
+    background-color: #ccc; /* Idle color */
+    margin: 0 auto;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+#mining-animation.mining {
+    background-color: #4CAF50; /* Green when mining */
+    animation: pulse 1s infinite alternate;
+}
+
+@keyframes pulse {
+    from { opacity: 0.7; }
+    to { opacity: 1; }
+}
+
+/* Actions / Buttons */
+.actions {
+    margin-bottom: 25px;
+}
+
+.button {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 20px; /* Rounded */
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+    font-weight: bold;
+    display: inline-block; /* Needed for potential multiple buttons */
+    margin: 5px;
+}
+
+.button.primary {
+    background-color: var(--tg-theme-button-color, #007bff);
+    color: var(--tg-theme-button-text-color, #ffffff);
+}
+.button.primary:hover {
+    filter: brightness(1.1);
+}
+.button.primary:active {
+    transform: scale(0.98);
+}
+
+.button.secondary {
+    background-color: var(--tg-theme-secondary-bg-color, #6c757d);
+    color: var(--tg-theme-text-color, #ffffff);
+}
+/* Add more button styles if needed */
+
+/* Footer */
+footer {
+    margin-top: 20px;
+    font-size: 0.8em;
+    color: var(--tg-theme-hint-color, #aaa);
+    border-top: 1px solid var(--tg-theme-hint-color, #eee);
+    padding-top: 15px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 400px) {
+    body {
+        padding: 10px;
+    }
+    .container {
+        padding: 15px;
+    }
+    .stats {
+        flex-direction: column; /* Stack stats vertically */
+        align-items: center;
+    }
+    .stat-item {
+        width: 80%; /* Take more width when stacked */
+        min-width: unset;
+    }
+    .button {
+        padding: 10px 20px;
+        font-size: 0.9em;
+        width: 80%; /* Make buttons wider on small screens */
+    }
+}
