@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>DogeMiner</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Telegram WebApp Script -->
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <img src="doge-icon.png" alt="Doge Icon" class="doge-icon"> <!-- Add a doge icon image -->
+            <h1>DogeMiner</h1>
+            <p id="user-greeting">Welcome, Miner!</p>
+        </header>
+
+        <main>
+            <div class="stats">
+                <div class="stat-item">
+                    <h2>Balance</h2>
+                    <p><span id="doge-balance">0.00000000</span> <span class="doge-ticker">Ð</span></p>
+                </div>
+                <div class="stat-item">
+                    <h2>Rate</h2>
+                    <p><span id="mining-rate">0.00000100</span> <span class="doge-ticker">Ð</span> / sec</p>
+                </div>
+            </div>
+
+            <div class="mining-status">
+                <p id="status-text">Status: Idle</p>
+                <div id="mining-animation" class="idle"></div> <!-- Simple visual indicator -->
+            </div>
+
+            <div class="actions">
+                <button id="start-stop-button" class="button primary">Start Mining</button>
+                <!-- Add more buttons later if needed (e.g., upgrades) -->
+                <!-- <button id="upgrade-button" class="button secondary">Upgrade Rig (Cost: 10 Ð)</button> -->
+            </div>
+        </main>
+
+        <footer>
+            <p>Disclaimer: This is a simulation. No real Dogecoin is mined.</p>
+            <!-- Optional: Close button -->
+            <!-- <button id="close-button">Close</button> -->
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
